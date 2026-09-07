@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Sri Lakshmi Mobile Service Center</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+  <video class="admin-background" autoplay loop muted playsinline aria-hidden="true">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260803_192301_9231ed6b-c55c-4a48-909c-4ebe11cf2e11.mp4" type="video/mp4" />
+  </video>
+
+  <main class="admin-shell">
+    <section id="loginView" class="admin-login-view">
+      <div class="admin-card">
+        <div class="admin-mark">owner</div>
+        <h1>Shop Admin Login</h1>
+        <p class="admin-subtext">Sri Lakshmi Mobile Service Center</p>
+        <form id="loginForm" novalidate>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-row">
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit" class="btn-primary" id="loginBtn">Log In</button>
+          <p id="loginStatusMsg" class="booking-status-msg"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="dashboardView" class="admin-dashboard-view" style="display:none;">
+      <header class="admin-header">
+        <div>
+          <h1>Bookings</h1>
+          <p class="admin-header-sub">Manage service requests from your customers</p>
+        </div>
+        <div class="admin-header-right">
+          <span id="adminName" class="admin-name"></span>
+          <button id="logoutBtn" class="btn-secondary small">Log Out</button>
+        </div>
+      </header>
+
+      <div class="admin-filters">
+        <button class="filter-btn active" data-status="">All</button>
+        <button class="filter-btn" data-status="pending">Requested</button>
+        <button class="filter-btn" data-status="approved">Approved</button>
+        <button class="filter-btn" data-status="rejected">Rejected</button>
+        <button id="refreshBtn" class="filter-btn refresh">↻ Refresh</button>
+      </div>
+      <div id="bookingsList" class="bookings-list">
+        <p class="admin-subtext">Loading bookings...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
